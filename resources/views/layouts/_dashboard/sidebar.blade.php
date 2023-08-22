@@ -112,58 +112,11 @@
 
 
 
-    <li class="menu-header small text-uppercase">
-      <span class="menu-header-text">User</span>
-    </li>
-
-
-
-    <li class="menu-item  ">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-group"></i>
-        <div data-i18n="Layouts">User</div>
-      </a>
-      <ul class="menu-sub">
-        <li class="menu-item ">
-          <a href="" class="menu-link">
-            <div data-i18n="Without menu">List</div>
-          </a>
-        </li>
-
-        <li class="menu-item">
-          <a href="" class="menu-link">
-            <div data-i18n="Without navbar">Create</div>
-          </a>
-        </li>
-
-      </ul>
-    </li>
 
 
 
 
-
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Email</span></li>
-
-
-    <li class="menu-item active">
-      <a href="" class="menu-link">
-        <i class="menu-icon bx bx-envelope"></i>
-        <div data-i18n="Tables">Choose Hidden Gem </div>
-      </a>
-    </li>
-    <li class="menu-item active">
-      <a href="{{route('contact.index')}}" class="menu-link">
-        <i class="menu-icon bx bx-envelope"></i>
-        <div data-i18n="Tables">Contact</div>
-      </a>
-    </li>
-    <li class="menu-item">
-      <a href="" class="menu-link">
-        <i class="menu-icon bx bx-envelope"></i>
-        <div data-i18n="Tables">Create Email </div>
-      </a>
-    </li>
+ 
   </ul>
 </aside>
 <!-- / Menu -->
