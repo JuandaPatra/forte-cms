@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Helpers\ApiFormatter;
+use App\helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\Products;
 use Illuminate\Http\Request;
