@@ -173,7 +173,7 @@ Category Edit
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="input_post_title" class="form-label">Name id_ID</label>
+                                    <label for="input_post_title" class="form-label">Name English</label>
                                     <input id="input_post_title" name="name0" type="text" placeholder="" class="form-control @error('name0') is-invalid @enderror" name="name0" value="{{ old('name0', $productDetail[0]['name']) }}" />
                                     @error('name0')
                                     <span class="invalid-feedback" role="alert">
@@ -181,7 +181,7 @@ Category Edit
                                     </span>
                                     @enderror
                                 </div>
-                                <input type="hidden" name="lang[]" value="id_ID">
+                                <input type="hidden" name="lang[]" value="en">
                                 <div class="mb-3">
                                     <label for="input_post_content" class="form-label">Description</label>
                                     <textarea id="input_post_content" name="description0" class="form-control @error('description0') is-invalid @enderror" rows="20">
@@ -194,7 +194,7 @@ Category Edit
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="input_post_title" class="form-label">Name en_EN</label>
+                                    <label for="input_post_title" class="form-label">Name Japan</label>
                                     <input id="input_post_title" name="name1" type="text" placeholder="" class="form-control @error('name1') is-invalid @enderror" name="name1" value="{{ old('name1', $productDetail[1]['name']) }}" />
                                     @error('name1')
                                     <span class="invalid-feedback" role="alert">
@@ -202,7 +202,7 @@ Category Edit
                                     </span>
                                     @enderror
                                 </div>
-                                <input type="hidden" name="lang[]" value="en_EN">
+                                <input type="hidden" name="lang[]" value="ja">
                                 <div class="mb-3">
                                     <label for="input_post_content1" class="form-label">Description</label>
                                     <textarea id="input_post_content1" name="description1" class="form-control @error('description1') is-invalid @enderror" rows="20">
@@ -215,7 +215,7 @@ Category Edit
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="input_post_title" class="form-label">Name jp_JP</label>
+                                    <label for="input_post_title" class="form-label">Name Russia</label>
                                     <input id="input_post_title" name="name2" type="text" placeholder="" class="form-control @error('name2') is-invalid @enderror" name="name2" value="{{ old('name2', $productDetail[2]['name']) }}" />
                                     @error('name2')
                                     <span class="invalid-feedback" role="alert">
@@ -223,7 +223,7 @@ Category Edit
                                     </span>
                                     @enderror
                                 </div>
-                                <input type="hidden" name="lang[]" value="jp_JP">
+                                <input type="hidden" name="lang[]" value="ru">
                                 <div class="mb-3">
                                     <label for="input_post_content2" class="form-label">Description</label>
                                     <textarea id="input_post_content2" name="description2" class="form-control @error('description2') is-invalid @enderror" rows="20">
