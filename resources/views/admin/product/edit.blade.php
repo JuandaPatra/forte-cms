@@ -55,6 +55,34 @@ Category Edit
                                 </div>
 
                                 <div class="mb-3">
+                                        <label for="input_post_image" class="form-label">Image</label>
+                                        <div class="input-group">
+                                            <button id="button_post_image" data-input="input_post_image" class="btn btn-outline-primary" type="button">
+                                                Browse
+                                            </button>
+                                            <input id="input_post_image" name="images1" value="{{ old('images1', $productDetail[0]->images1) }}" type="text" class="form-control @error('images1') is-invalid @enderror" placeholder="" readonly />
+                                            @error('images1')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>Wajib diisi</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input_post_image" class="form-label">Image 2</label>
+                                        <div class="input-group">
+                                            <button id="button_post_image2" data-input="input_post_image2" class="btn btn-outline-primary" type="button">
+                                                Browse
+                                            </button>
+                                            <input id="input_post_image2" name="images2" value="{{ old('images2', $productDetail[0]->images2) }}" type="text" class="form-control @error('images2') is-invalid @enderror" placeholder="" readonly />
+                                            @error('images2')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>Wajib diisi</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                <div class="mb-3">
                                     <label for="exampleFormControlSelect1" class="form-label">Intensity</label>
                                     <select id="select_post_intensity" name="intensity" class="form-select @error('intensity') is-invalid @enderror">
                                         <option value="">Please Select</option>
@@ -255,6 +283,7 @@ Category Edit
             // event : input thumbnail with file manager and description
             $('#button_post_thumbnail').filemanager('image');
             $('#button_post_image').filemanager('image');
+            $('#button_post_image2').filemanager('image');
             $('#button_post_pdf').filemanager('application');
             // event :  description
 
