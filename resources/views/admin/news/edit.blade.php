@@ -45,7 +45,16 @@ Category Add
                                             <button id="button_post_image" data-input="input_post_image" class="btn btn-outline-primary" type="button">
                                                 Browse
                                             </button>
-                                            <input id="input_post_image" name="thumbnail" value="{{ old('thumbnail') }}" type="text" class="form-control" placeholder="" readonly />
+                                            <input id="input_post_image" name="thumbnail" value="{{ old('thumbnail', $newsDetail[0]['images1']) }}" type="text" class="form-control" placeholder="" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input_post_image" class="form-label">Image 2</label>
+                                        <div class="input-group">
+                                            <button id="button_post_image" data-input="input_post_image" class="btn btn-outline-primary" type="button">
+                                                Browse
+                                            </button>
+                                            <input id="input_post_image" name="images2" value="{{ old('images2', $newsDetail[0]['images2']) }}" type="text" class="form-control" placeholder="" readonly />
                                         </div>
                                     </div>
                                     <div class="mb-3">

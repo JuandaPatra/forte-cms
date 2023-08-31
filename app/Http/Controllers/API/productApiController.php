@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Helpers\ApiFormatter;
+use App\helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
+use App\Models\Categories;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,20 @@ class productApiController extends Controller
         $product = Products::where('lang', '=', $lang)->get();
 
 
+        return ApiFormatter::createApi(200, 'success', $product);
+    }
+
+    public function category(Request $request)
+    {
+
+        $status = $request->get('category');
+        $lang = $request->get('lang');
+
+        $category = Categories::where('slug', '=', $status)->first();
+        
+
+        $product = Products::where('category', '=', $category->id)->where('lang', '=', $lang)->get();
+        
         return ApiFormatter::createApi(200, 'success', $product);
     }
 

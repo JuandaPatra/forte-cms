@@ -16,17 +16,7 @@ Category Add
                     <!-- title -->
                     <div class="col-xl-12">
                         <div class="nav-align-top mb-4">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="false">Home</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-profile" aria-controls="navs-top-profile" aria-selected="false">Profile</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button type="button" class="nav-link " role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-messages" aria-controls="navs-top-messages" aria-selected="true">Messages</button>
-                                </li>
-                            </ul>
+                            
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" id="navs-top-home" role="tabpanel">
                                     <div class="mb-3">
@@ -54,7 +44,26 @@ Category Add
                                             <button id="button_post_image" data-input="input_post_image" class="btn btn-outline-primary" type="button">
                                                 Browse
                                             </button>
-                                            <input id="input_post_image" name="thumbnail" value="{{ old('thumbnail') }}" type="text" class="form-control" placeholder="" readonly />
+                                            <input id="input_post_image" name="thumbnail" value="{{ old('thumbnail') }}" type="text" class="form-control @error('thumbnail') is-invalid @enderror" placeholder="" readonly />
+                                            @error('thumbnail')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>Wajib diisi</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input_post_image" class="form-label">Image 2</label>
+                                        <div class="input-group">
+                                            <button id="button_post_image2" data-input="input_post_image2" class="btn btn-outline-primary" type="button">
+                                                Browse
+                                            </button>
+                                            <input id="input_post_image2" name="images2" value="{{ old('images2') }}" type="text" class="form-control @error('images2') is-invalid @enderror" placeholder="" readonly />
+                                            @error('images2')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>Wajib diisi</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-3">
@@ -213,6 +222,7 @@ Category Add
             // event : input thumbnail with file manager and description
             $('#button_post_thumbnail').filemanager('image');
             $('#button_post_image').filemanager('image');
+            $('#button_post_image2').filemanager('image');
             $('#button_post_pdf').filemanager('application');
             // event :  description
 

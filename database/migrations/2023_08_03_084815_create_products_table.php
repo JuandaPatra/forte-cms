@@ -19,11 +19,23 @@ return new class extends Migration
             $table->string('lang');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->integer('intensity')->nullable();
+            $table->integer('body')->nullable();
+            $table->integer('smoothness')->nullable();
+            $table->integer('sensation')->nullable();
+            $table->integer('category')->nullable();
+            $table->string('diameter')->nullable();
+            $table->string('length')->nullable();
             $table->text('images1')->nullable();
             $table->text('images2')->nullable();
             $table->timestamps();
         });
+
+        
     }
+
+    
+
 
     /**
      * Reverse the migrations.
