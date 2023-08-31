@@ -65,7 +65,9 @@ class ProductController extends Controller
                 'smoothness'            =>  'required',
                 'sensation'             =>  'required',
                 'diameter'              =>  'required',
-                'length'                =>  'required'
+                'length'                =>  'required',
+                'images1'               =>  'required',
+                'images2'               =>  'required'
             ]
         );
 
@@ -107,7 +109,9 @@ class ProductController extends Controller
                         'smoothness'                    =>  $request->smoothness,
                         'sensation'                     =>  $request->sensation,
                         'diameter'                      =>  $request->diameter,
-                        'length'                        =>  $request->length
+                        'length'                        =>  $request->length,
+                        'images1'                       =>  $request->images1,
+                        'images2'                       =>  $request->images2
                     ]);
                 } catch (\throwable $th) {
                     DB::rollBack();
@@ -185,7 +189,9 @@ class ProductController extends Controller
                 'smoothness'            =>  'required',
                 'sensation'             =>  'required',
                 'diameter'              =>  'required',
-                'length'                =>  'required'
+                'length'                =>  'required',
+                'images1'               =>  'required',
+                'images2'               =>  'required'
             ]
         );
 
@@ -233,7 +239,9 @@ class ProductController extends Controller
                         'smoothness'                    =>  $request->smoothness,
                         'sensation'                     =>  $request->sensation,
                         'diameter'                      =>  $request->diameter,
-                        'length'                        =>  $request->length
+                        'length'                        =>  $request->length,
+                        'images1'                       =>  $request->images1,
+                        'images2'                       =>  $request->images2
                     ]);
                 } catch (\throwable $th) {
                     DB::rollBack();
