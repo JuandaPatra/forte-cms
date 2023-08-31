@@ -26,7 +26,7 @@ class ProductSeeder extends Seeder
 
         Products::create([
             'product_id'    => 1,
-            'lang'          => 'id_ID',
+            'lang'          => 'en',
             'name'         => 'Product 1 Indonesia',
             'description'   => 'deskripsi produk 1 indonesia',
             'intensity'     => 3,
@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
 
         Products::create([
             'product_id'    => 1,
-            'lang'          => 'en_EN',
+            'lang'          => 'ja',
             'name'         => 'Product 1 English',
             'description'   => 'deskripsi produk 1 English',
             'intensity'     => 3,
@@ -58,7 +58,7 @@ class ProductSeeder extends Seeder
 
         Products::create([
             'product_id'    => 1,
-            'lang'          => 'jp_JP',
+            'lang'          => 'ru',
             'name'         => 'Product 1 japan',
             'description'   => 'deskripsi produk 1 japan',
             'intensity'     => 3,
@@ -83,7 +83,7 @@ class ProductSeeder extends Seeder
 
         Products::create([
             'product_id'    => 2,
-            'lang'          => 'id_ID',
+            'lang'          => 'en',
             'name'         => 'Product 2 Indonesia',
             'description'   => 'deskripsi produk 2 indonesia',
             'intensity'     => 4,
@@ -99,7 +99,7 @@ class ProductSeeder extends Seeder
 
         Products::create([
             'product_id'    => 2,
-            'lang'          => 'en_EN',
+            'lang'          => 'ja',
             'name'         => 'Product 2 English',
             'description'   => 'deskripsi produk 2 English',
             'intensity'     => 4,
@@ -115,7 +115,7 @@ class ProductSeeder extends Seeder
 
         Products::create([
             'product_id'    => 2,
-            'lang'          => 'jp_JP',
+            'lang'          => 'ru',
             'name'         => 'Product 2 japan',
             'description'   => 'deskripsi produk 2 japan',
             'intensity'     => 4,

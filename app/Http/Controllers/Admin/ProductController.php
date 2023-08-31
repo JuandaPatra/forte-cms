@@ -195,6 +195,7 @@ class ProductController extends Controller
             ]
         );
 
+
         if ($validator->fails()) {
             return redirect()->back()->withInput($request->all())->withErrors($validator);
         }
