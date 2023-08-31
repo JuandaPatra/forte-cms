@@ -67,7 +67,7 @@ Category Add
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">title bahasa</label>
+                                        <label for="input_post_title" class="form-label">title English</label>
                                         <input id="input_post_title" name="name0" type="text" placeholder="" class="form-control @error('name0') is-invalid @enderror" name="name0" value="{{ old('name0') }}" />
                                         @error('name0')
                                         <span class="invalid-feedback" role="alert">
@@ -76,7 +76,7 @@ Category Add
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">short desc bahasa</label>
+                                        <label for="input_post_title" class="form-label">short desc English</label>
                                         <input id="input_post_title" name="shortdesc0" type="text" placeholder="" class="form-control @error('name0') is-invalid @enderror" name="name0" value="{{ old('name0') }}" />
                                         @error('shortdesc0')
                                         <span class="invalid-feedback" role="alert">
@@ -84,7 +84,7 @@ Category Add
                                         </span>
                                         @enderror
                                     </div>
-                                    <input type="hidden" name="lang[]" value="id_ID">
+                                    <input type="hidden" name="lang[]" value="en">
                                     <div class="mb-3">
                                         <label for="input_post_content" class="form-label">Description bahasa</label>
                                         <textarea id="input_post_content" name="description0" class="form-control @error('description0') is-invalid @enderror" rows="20">
@@ -97,7 +97,7 @@ Category Add
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">news title English</label>
+                                        <label for="input_post_title" class="form-label">news title Japan</label>
                                         <input id="input_post_title" name="name1" type="text" placeholder="" class="form-control @error('name1') is-invalid @enderror" name="name1" value="{{ old('name1') }}" />
                                         @error('name1')
                                         <span class="invalid-feedback" role="alert">
@@ -106,7 +106,7 @@ Category Add
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">short desc english</label>
+                                        <label for="input_post_title" class="form-label">short desc Japan</label>
                                         <input id="input_post_title" name="shortdesc1" type="text" placeholder="" class="form-control @error('shortdesc1') is-invalid @enderror" name="shortdesc1" value="{{ old('shortdesc1') }}" />
                                         @error('shortdesc1')
                                         <span class="invalid-feedback" role="alert">
@@ -114,9 +114,9 @@ Category Add
                                         </span>
                                         @enderror
                                     </div>
-                                    <input type="hidden" name="lang[]" value="en_EN">
+                                    <input type="hidden" name="lang[]" value="ja">
                                     <div class="mb-3">
-                                        <label for="input_post_content1" class="form-label">News Description English</label>
+                                        <label for="input_post_content1" class="form-label">News Description Japan</label>
                                         <textarea id="input_post_content1" name="description1" class="form-control @error('description1') is-invalid @enderror" rows="20">
                                         </textarea>
                                         @error('description1')
@@ -126,7 +126,7 @@ Category Add
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">news title Japan</label>
+                                        <label for="input_post_title" class="form-label">news title Russia</label>
                                         <input id="input_post_title" name="name2" type="text" placeholder="" class="form-control @error('name2') is-invalid @enderror" name="name2" value="{{ old('name2') }}" />
                                         @error('name2')
                                         <span class="invalid-feedback" role="alert">
@@ -135,7 +135,7 @@ Category Add
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">short desc japan</label>
+                                        <label for="input_post_title" class="form-label">short desc Russia</label>
                                         <input id="input_post_title" name="shortdesc2" type="text" placeholder="" class="form-control @error('shortdesc2') is-invalid @enderror" name="shortdesc2" value="{{ old('shortdesc2') }}" />
                                         @error('shortdesc2')
                                         <span class="invalid-feedback" role="alert">
@@ -143,9 +143,9 @@ Category Add
                                         </span>
                                         @enderror
                                     </div>
-                                    <input type="hidden" name="lang[]" value="jp_JP">
+                                    <input type="hidden" name="lang[]" value="ru">
                                     <div class="mb-3">
-                                        <label for="input_post_content2" class="form-label">News Description japan</label>
+                                        <label for="input_post_content2" class="form-label">News Description Russia</label>
                                         <textarea id="input_post_content2" name="description2" class="form-control @error('description2') is-invalid @enderror" rows="20">
                                         </textarea>
                                         @error('description2')
