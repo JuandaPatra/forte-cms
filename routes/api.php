@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\newsApiController;
 use App\Http\Controllers\API\productApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('product', [productApiController::class, 'category'])->name('category');
 Route::get('product/{lang}', [productApiController::class, 'index'])->name('product');
+
+// Route::get('news/detail/{slug}',[newsApiController::class, 'detail'])->class('news.detail');
+Route::get('news', [newsApiController::class, 'index'])->name('news');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

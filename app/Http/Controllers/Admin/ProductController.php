@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Alert;
+use App\Models\Categories;
 use App\Models\ProductMain;
 use App\Models\Products;
 
@@ -20,6 +21,8 @@ class ProductController extends Controller
     public function index()
     {
         $product = ProductMain::all();
+
+
         return view('admin.product.index', compact('product'));
     }
 
@@ -31,7 +34,8 @@ class ProductController extends Controller
     public function create()
     {
 
-        return view('admin.product.create');
+        $categories = Categories::all();
+        return view('admin.product.create', compact('categories'));
     }
 
     /**
@@ -42,6 +46,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $validator = Validator::make(
             $request->all(),
             [
@@ -54,6 +59,13 @@ class ProductController extends Controller
                 'name2'                 =>  'required',
                 'description2'          =>  'required',
                 'lang'                  =>  'required',
+                'category'              =>  'required',
+                'intensity'             =>  'required',
+                'body'                  =>  'required',
+                'smoothness'            =>  'required',
+                'sensation'             =>  'required',
+                'diameter'              =>  'required',
+                'length'                =>  'required'
             ]
         );
 
@@ -85,10 +97,17 @@ class ProductController extends Controller
             for ($i = 0; $i < 3; $i++) {
                 try {
                     $post = Products::create([
-                        'product_id'                => $product->id,
-                        'lang'                       => $request->lang[$i],
-                        'name'                       => $productNameLang[$i],
-                        'description'               => $productDescLang[$i]
+                        'product_id'                    =>  $product->id,
+                        'lang'                          =>  $request->lang[$i],
+                        'name'                          =>  $productNameLang[$i],
+                        'description'                   =>  $productDescLang[$i],
+                        'category'                      =>  $request->category,
+                        'intensity'                     =>  $request->intensity,
+                        'body'                          =>  $request->body,
+                        'smoothness'                    =>  $request->smoothness,
+                        'sensation'                     =>  $request->sensation,
+                        'diameter'                      =>  $request->diameter,
+                        'length'                        =>  $request->length
                     ]);
                 } catch (\throwable $th) {
                     DB::rollBack();
@@ -133,9 +152,9 @@ class ProductController extends Controller
 
         $product = ProductMain::where('id', '=', $id)->first();
         $productDetail = Products::where('product_id', '=', $product->id)->get();
+        $categories = Categories::all();
 
-
-        return view('admin.product.edit', compact('product','productDetail'));
+        return view('admin.product.edit', compact('product', 'productDetail', 'categories'));
     }
 
     /**
@@ -152,7 +171,7 @@ class ProductController extends Controller
             $request->all(),
             [
                 'title'                 =>  'required|string|max:100',
-                'slug'                  =>  'required|string|unique:product_mains,slug',
+                'slug'                  =>  'required|string',
                 'name0'                 =>  'required',
                 'description0'          =>  'required',
                 'name1'                 =>  'required',
@@ -160,6 +179,13 @@ class ProductController extends Controller
                 'name2'                 =>  'required',
                 'description2'          =>  'required',
                 'lang'                  =>  'required',
+                'category'              =>  'required',
+                'intensity'             =>  'required',
+                'body'                  =>  'required',
+                'smoothness'            =>  'required',
+                'sensation'             =>  'required',
+                'diameter'              =>  'required',
+                'length'                =>  'required'
             ]
         );
 
@@ -177,7 +203,7 @@ class ProductController extends Controller
                 'slug'          =>  $request->slug,
                 'order'         => 1
             ]);
-           
+
             DB::commit();
 
 
@@ -197,12 +223,18 @@ class ProductController extends Controller
                 try {
 
                     $productDetail[$i]->update([
-                        'product_id'                => $product->id,
-                        'lang'                       => $request->lang[$i],
-                        'name'                       => $productNameLang[$i],
-                        'description'               => $productDescLang[$i]
+                        'product_id'                    =>  $product->id,
+                        'lang'                          =>  $request->lang[$i],
+                        'name'                          =>  $productNameLang[$i],
+                        'description'                   =>  $productDescLang[$i],
+                        'category'                      =>  $request->category,
+                        'intensity'                     =>  $request->intensity,
+                        'body'                          =>  $request->body,
+                        'smoothness'                    =>  $request->smoothness,
+                        'sensation'                     =>  $request->sensation,
+                        'diameter'                      =>  $request->diameter,
+                        'length'                        =>  $request->length
                     ]);
-                   
                 } catch (\throwable $th) {
                     DB::rollBack();
                     Alert::error('Tambah Product', 'error' . $th->getMessage());
@@ -222,8 +254,6 @@ class ProductController extends Controller
         } finally {
             DB::commit();
         }
-
-
     }
 
     /**
@@ -235,7 +265,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
 
-        $product= Products::where('product_id','=',$id)->get();
+        $product = Products::where('product_id', '=', $id)->get();
 
         $productMain = ProductMain::whereId($id);
         $productMain->delete();

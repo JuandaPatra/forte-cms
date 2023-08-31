@@ -16,7 +16,14 @@ class Products extends Model
         'name',
         'description',
         'images1',
-        'images2'
+        'images2',
+        'intensity',
+        'smoothness',
+        'body',
+        'sensation',
+        'category',
+        'diameter',
+        'length'
     ];
 
     public function ProductMain()

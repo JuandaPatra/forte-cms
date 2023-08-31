@@ -48,6 +48,8 @@ class NewsController extends Controller
                 'title'                 =>  'required|string|max:100',
                 'slug'                  =>  'required|string|unique:product_mains,slug',
                 'name0'                 =>  'required',
+                'thumbnail'             =>  'required',
+                'images2'               =>  'required',
                 'description0'          =>  'required',
                 'name1'                 =>  'required',
                 'description1'          =>  'required',
@@ -103,7 +105,9 @@ class NewsController extends Controller
                         'description1'                  => $news[$i][0],
                         'description2'                  => $news[$i][3],
                         'date'                          => Carbon::today(),
-                        'status'                        => 'publish'
+                        'status'                        => 'publish',
+                        'images1'                       => $request->thumbnail,
+                        'images2'                       => $request->images2
                     ]);
                 } catch (\throwable $th) {
                     DB::rollBack();
@@ -113,7 +117,6 @@ class NewsController extends Controller
                     DB::commit();
                 }
             }
-
 
             Alert::success('Tambah News', 'Berhasil');
             return redirect()->route('news.index');
@@ -161,7 +164,6 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
         $validator = Validator::make(
             $request->all(),
             [
@@ -191,7 +193,7 @@ class NewsController extends Controller
                 'title'         =>  $request->title,
                 'slug'          =>  $request->slug,
             ]);
-            
+
             DB::commit();
             $product = NewsMain::where('slug', '=', $request->slug)->first();
 
@@ -231,7 +233,6 @@ class NewsController extends Controller
                         'date'                          => Carbon::today(),
                         'status'                        => 'publish'
                     ]);
-                   
                 } catch (\throwable $th) {
                     DB::rollBack();
                     Alert::error('Tambah News', 'error' . $th->getMessage());
@@ -261,8 +262,8 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        
-        $product= News::where('news_id','=',$id)->get();
+
+        $product = News::where('news_id', '=', $id)->get();
 
         $productMain = NewsMain::whereId($id);
         $productMain->delete();
