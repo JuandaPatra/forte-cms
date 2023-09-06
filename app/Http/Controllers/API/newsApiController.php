@@ -18,7 +18,7 @@ class newsApiController extends Controller
 
 
         $ip =$request->ip();
-        $position = Location::get();
+        $position = \Location::get();
         if($slug){
             $news = News::where('slug','=', $slug)->where('lang', '=', $lang)->first();
         }else{
