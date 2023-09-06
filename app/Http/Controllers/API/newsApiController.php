@@ -19,12 +19,28 @@ class newsApiController extends Controller
 
         $ip =$request->ip();
         $position = \Location::get();
+        // $position = request()->ip();
+        // $position = $request->ip();
+
+        $whoIsIp = request()->ip();
+        $userIp = '100.10.0.5';
+        // $userIp = '127.0.0.1';
+        $position = Location::get($userIp);
+
+        if($position->countryCode = 'JP'){
+            $lang = 'ja';
+        }elseif($position->countryCode = 'RU'){
+            $lang = 'ru';
+
+        }else{
+            $lang = 'en';
+        }
         if($slug){
             $news = News::where('slug','=', $slug)->where('lang', '=', $lang)->first();
         }else{
             $news = News::where('lang', '=', $lang)->get();
         }
 
-        return ApiFormatter::createApi(200, 'success', $position);
+        return ApiFormatter::createApi(200, 'success', $news);
     }
 }
