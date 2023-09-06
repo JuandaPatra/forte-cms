@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categories;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
 
 class newsApiController extends Controller
 {
@@ -15,12 +16,15 @@ class newsApiController extends Controller
         $slug = $request->get('news');
         $lang = $request->get('lang');
 
+
+        $ip =$request->ip();
+        $position = Location::get();
         if($slug){
             $news = News::where('slug','=', $slug)->where('lang', '=', $lang)->first();
         }else{
             $news = News::where('lang', '=', $lang)->get();
         }
 
-        return ApiFormatter::createApi(200, 'success', $news);
+        return ApiFormatter::createApi(200, 'success', $position);
     }
 }
