@@ -86,7 +86,7 @@ Category Edit
                                     <label for="exampleFormControlSelect1" class="form-label">Intensity</label>
                                     <select id="select_post_intensity" name="intensity" class="form-select @error('intensity') is-invalid @enderror">
                                         <option value="">Please Select</option>
-                                        <option value="1" {{ old('intensity', $productDetail[0]->intensity) == 0 ? "selected" : null }}>0</option>
+                                        <option value="0" {{ old('intensity', $productDetail[0]->intensity) == 0 ? "selected" : null }}>0</option>
                                         <option value="1" {{ old('intensity', $productDetail[0]->intensity) == 1 ? "selected" : null }}>1</option>
                                         <option value="2" {{ old('intensity', $productDetail[0]->intensity) == 2 ? "selected" : null }}>2</option>
                                         <option value="3" {{ old('intensity', $productDetail[0]->intensity) == 3 ? "selected" : null }}>3</option>
@@ -104,7 +104,7 @@ Category Edit
                                     <label for="exampleFormControlSelect1" class="form-label">Body</label>
                                     <select id="select_post_body" name="body" class="form-select @error('body') is-invalid @enderror">
                                         <option value="">Please Select</option>
-                                        <option value="1" {{ old('body', $productDetail[0]->body) == 0 ? "selected" : null }}>0</option>
+                                        <option value="0" {{ old('body', $productDetail[0]->body) == 0 ? "selected" : null }}>0</option>
                                         <option value="1" {{ old('body', $productDetail[0]->body) == 1 ? "selected" : null }}>1</option>
                                         <option value="2" {{ old('body', $productDetail[0]->body) == 2 ? "selected" : null }}>2</option>
                                         <option value="3" {{ old('body', $productDetail[0]->body) == 3 ? "selected" : null }}>3</option>
@@ -123,7 +123,7 @@ Category Edit
                                     <label for="exampleFormControlSelect1" class="form-label">Smoothness</label>
                                     <select id="select_post_smoothness" name="smoothness" class="form-select @error('smoothness') is-invalid @enderror">
                                         <option value="">Please Select</option>
-                                        <option value="1" {{ old('smoothness', $productDetail[0]->smoothness) == 0 ? "selected" : null }}>0</option>
+                                        <option value="0" {{ old('smoothness', $productDetail[0]->smoothness) == 0 ? "selected" : null }}>0</option>
                                         <option value="1" {{ old('smoothness', $productDetail[0]->smoothness) == 1 ? "selected" : null }}>1</option>
                                         <option value="2" {{ old('smoothness', $productDetail[0]->smoothness) == 2 ? "selected" : null }}>2</option>
                                         <option value="3" {{ old('smoothness', $productDetail[0]->smoothness) == 3 ? "selected" : null }}>3</option>
@@ -141,7 +141,7 @@ Category Edit
                                     <label for="exampleFormControlSelect1" class="form-label">Sensation</label>
                                     <select id="select_post_sensation" name="sensation" class="form-select @error('sensation') is-invalid @enderror">
                                         <option value="">Please Select</option>
-                                        <option value="1" {{ old('sensation', $productDetail[0]->sensation) == 0 ? "selected" : null }}>0</option>
+                                        <option value="0" {{ old('sensation', $productDetail[0]->sensation) == 0 ? "selected" : null }}>0</option>
                                         <option value="1" {{ old('sensation', $productDetail[0]->sensation) == 1 ? "selected" : null }}>1</option>
                                         <option value="2" {{ old('sensation', $productDetail[0]->sensation) == 2 ? "selected" : null }}>2</option>
                                         <option value="3" {{ old('sensation', $productDetail[0]->sensation) == 3 ? "selected" : null }}>3</option>
