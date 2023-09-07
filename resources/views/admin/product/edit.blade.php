@@ -3,7 +3,7 @@
 Category Edit
 @endsection
 @section('breadcrumbs')
-{{-- {{ Breadcrumbs::render('add_category') }} --}}
+ {{ Breadcrumbs::render('edit-product', $product) }} 
 @endsection
 @section('content')
 <div class="row">
