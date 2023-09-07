@@ -90,7 +90,7 @@ Category Add
                                         <label for="exampleFormControlSelect1" class="form-label">Intensity</label>
                                         <select id="select_post_intensity" name="intensity" class="form-select @error('intensity') is-invalid @enderror">
                                             <option value="">Please Select</option>
-                                            <option value="1" {{ old('intensity') == 0 ? "selected" : null }}>0</option>
+                                            <option value="0" {{ old('intensity') == 0 ? "selected" : null }}>0</option>
                                             <option value="1" {{ old('intensity') == 1 ? "selected" : null }}>1</option>
                                             <option value="2" {{ old('intensity') == 2 ? "selected" : null }}>2</option>
                                             <option value="3" {{ old('intensity') == 3 ? "selected" : null }}>3</option>
@@ -108,7 +108,7 @@ Category Add
                                         <label for="exampleFormControlSelect1" class="form-label">Body</label>
                                         <select id="select_post_body" name="body" class="form-select @error('body') is-invalid @enderror">
                                             <option value="">Please Select</option>
-                                            <option value="1" {{ old('body') == 0 ? "selected" : null }}>0</option>
+                                            <option value="0" {{ old('body') == 0 ? "selected" : null }}>0</option>
                                             <option value="1" {{ old('body') == 1 ? "selected" : null }}>1</option>
                                             <option value="2" {{ old('body') == 2 ? "selected" : null }}>2</option>
                                             <option value="3" {{ old('body') == 3 ? "selected" : null }}>3</option>
@@ -127,7 +127,7 @@ Category Add
                                         <label for="exampleFormControlSelect1" class="form-label">Smoothness</label>
                                         <select id="select_post_smoothness" name="smoothness" class="form-select @error('smoothness') is-invalid @enderror">
                                             <option value="">Please Select</option>
-                                            <option value="1" {{ old('smoothness') == 0 ? "selected" : null }}>0</option>
+                                            <option value="0" {{ old('smoothness') == 0 ? "selected" : null }}>0</option>
                                             <option value="1" {{ old('smoothness') == 1 ? "selected" : null }}>1</option>
                                             <option value="2" {{ old('smoothness') == 2 ? "selected" : null }}>2</option>
                                             <option value="3" {{ old('smoothness') == 3 ? "selected" : null }}>3</option>
@@ -145,7 +145,7 @@ Category Add
                                         <label for="exampleFormControlSelect1" class="form-label">Sensation</label>
                                         <select id="select_post_sensation" name="sensation" class="form-select @error('sensation') is-invalid @enderror">
                                             <option value="">Please Select</option>
-                                            <option value="1" {{ old('sensation') == 0 ? "selected" : null }}>0</option>
+                                            <option value="0" {{ old('sensation') == 0 ? "selected" : null }}>0</option>
                                             <option value="1" {{ old('sensation') == 1 ? "selected" : null }}>1</option>
                                             <option value="2" {{ old('sensation') == 2 ? "selected" : null }}>2</option>
                                             <option value="3" {{ old('sensation') == 3 ? "selected" : null }}>3</option>
