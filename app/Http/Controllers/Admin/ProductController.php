@@ -46,7 +46,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
         $validator = Validator::make(
             $request->all(),
             [
@@ -70,6 +69,7 @@ class ProductController extends Controller
                 'images2'               =>  'required'
             ]
         );
+
 
         if ($validator->fails()) {
             return redirect()->back()->withInput($request->all())->withErrors($validator);
@@ -104,10 +104,10 @@ class ProductController extends Controller
                         'name'                          =>  $productNameLang[$i],
                         'description'                   =>  $productDescLang[$i],
                         'category'                      =>  $request->category,
-                        'intensity'                     =>  $request->intensity,
-                        'body'                          =>  $request->body,
-                        'smoothness'                    =>  $request->smoothness,
-                        'sensation'                     =>  $request->sensation,
+                        'intensity'                     =>  intval($request->intensity) -1,
+                        'body'                          =>  intval($request->body) -1,
+                        'smoothness'                    =>  intval($request->smoothness) -1,
+                        'sensation'                     =>  intval($request->sensation) -1,
                         'diameter'                      =>  $request->diameter,
                         'length'                        =>  $request->length,
                         'images1'                       =>  $request->images1,
