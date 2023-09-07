@@ -1,8 +1,6 @@
 @extends('layouts.dashboard')
 @section('title')
-@php
-$postId = last(request()->segments());
-@endphp
+Product Lists
 @endsection
 @section('breadcrumbs')
 {{ Breadcrumbs::render('product') }}

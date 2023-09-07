@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>
-    {{ config('app.name') }} - @yield('title')
+    Forte - @yield('title')
   </title>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
