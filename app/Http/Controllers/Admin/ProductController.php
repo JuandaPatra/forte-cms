@@ -246,7 +246,7 @@ class ProductController extends Controller
                     ]);
                 } catch (\throwable $th) {
                     DB::rollBack();
-                    Alert::error('Tambah Product', 'error' . $th->getMessage());
+                    Alert::error('Edit Product', 'error' . $th->getMessage());
                     return redirect()->back()->withInput($request->all());
                 } finally {
                     DB::commit();
@@ -254,7 +254,7 @@ class ProductController extends Controller
             }
 
 
-            Alert::success('Tambah Product', 'Berhasil');
+            Alert::success('Edit Product', 'Berhasil');
             return redirect()->route('product.index');
         } catch (\throwable $th) {
             DB::rollBack();
