@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('title')
-Category Edit
+Product Edit
 @endsection
 @section('breadcrumbs')
  {{ Breadcrumbs::render('edit-product', $product) }} 
