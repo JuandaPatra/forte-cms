@@ -3,7 +3,7 @@
 Category Add
 @endsection
 @section('breadcrumbs')
-{{-- {{ Breadcrumbs::render('add_category') }} --}}
+ {{ Breadcrumbs::render('edit-news', $news ) }}
 @endsection
 @section('content')
 <div class="row">

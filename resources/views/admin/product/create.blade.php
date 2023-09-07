@@ -1,9 +1,9 @@
 @extends('layouts.dashboard')
 @section('title')
-Category Add
+Product Add
 @endsection
 @section('breadcrumbs')
-{{-- {{ Breadcrumbs::render('add_category') }} --}}
+ {{ Breadcrumbs::render('product-create') }}
 @endsection
 @section('content')
 <div class="row">

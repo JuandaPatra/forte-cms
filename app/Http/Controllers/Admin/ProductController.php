@@ -153,9 +153,15 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-
         $product = ProductMain::where('id', '=', $id)->first();
         $productDetail = Products::where('product_id', '=', $product->id)->get();
+
+
+        if($productDetail->count() == 0){
+            Alert::error('Edit Product', 'Data Corrupt silahkan hapus product ini');
+            return redirect()->route('product.index');
+
+        }
         $categories = Categories::all();
 
         return view('admin.product.edit', compact('product', 'productDetail', 'categories'));

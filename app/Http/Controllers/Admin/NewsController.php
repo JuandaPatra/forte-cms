@@ -151,6 +151,11 @@ class NewsController extends Controller
 
         $news = NewsMain::where('id', '=', $id)->first();
         $newsDetail = News::where('news_id', '=', $id)->get();
+        if($newsDetail->count() == 0){
+            Alert::error('Edit News', 'Data Corrupt silahkan hapus news ini');
+            return redirect()->route('news.index');
+
+        }
 
         return view('admin.news.edit', compact('news', 'newsDetail'));
     }

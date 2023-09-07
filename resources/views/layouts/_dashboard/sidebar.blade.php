@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <div class="app-brand demo">
-    <a href="index.html" class="app-brand-link">
+    <a href="{{route('product.index')}}" class="app-brand-link">
       <span class="app-brand-logo demo">
 
       </span>
@@ -47,18 +47,18 @@
     </li>
     @endcan
 
-    <li class="menu-item  ">
+    <li class="menu-item  {{ set_active(['product.index','product.create', 'product.edit']) }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bx bx-globe"></i>
         <div data-i18n="Layouts">Product</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item ">
+        <li class="menu-item {{ set_active('product.index') }} ">
           <a href="{{route('product.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ set_active('product.create') }}">
           <a href="{{route('product.create')}}" class="menu-link">
             <div data-i18n="Without navbar">Create</div>
           </a>
@@ -67,18 +67,18 @@
     </li>
 
 
-    <li class="menu-item ">
+    <li class="menu-item {{ set_active(['news.index','news.create', 'news.edit']) }} ">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bxs-compass"></i>
         <div data-i18n="Layouts">News</div>
       </a>
       <ul class="menu-sub ">
-        <li class="menu-item ">
+        <li class="menu-item {{ set_active('news.index') }} ">
           <a href="{{route('news.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
         </li>
-        <li class="menu-item ">
+        <li class="menu-item {{ set_active('news.create') }}">
           <a href="{{route('news.create')}}" class="menu-link">
             <div data-i18n="Without navbar">Create</div>
           </a>
@@ -86,20 +86,13 @@
       </ul>
     </li>
 
-
-
-
-
-
-
-
-    <li class="menu-item   ">
+    <li class="menu-item  {{ set_active('contact.index') }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bx-diamond"></i>
         <div data-i18n="Layouts">Contact</div>
       </a>
       <ul class="menu-sub">
-        <li class="menu-item ">
+        <li class="menu-item {{ set_active('contact.index') }}">
           <a href="{{route('contact.index')}}" class="menu-link">
             <div data-i18n="Without menu">List</div>
           </a>
