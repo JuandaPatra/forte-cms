@@ -14,24 +14,24 @@ class newsApiController extends Controller
     public function index(Request $request)
     {
         $slug = $request->get('news');
-        //$lang = $request->get('lang');
-		$lang = '';
+        $lang = $request->get('lang');
+		// $lang = '';
 
 		
-        $ip =$request->ip();
-        $position = \Location::get($ip);
+        // $ip =$request->ip();
+        // $position = \Location::get($ip);
 		
-		if($position->countryCode == "RU"){
-			$lang = 'ru';
-		}elseif($position->countryCode == "JP"){
-			$lang = 'ja';	
-		}else{
-			$lang = 'en';
-		}
+		// if($position->countryCode == "RU"){
+		// 	$lang = 'ru';
+		// }elseif($position->countryCode == "JP"){
+		// 	$lang = 'ja';	
+		// }else{
+		// 	$lang = 'en';
+		// }
 		
 		
 		
-        if($slug){
+        if($slug and $lang){
             $news = News::where('slug','=', $slug)->where('lang', '=', $lang)->first();
         }else{
             $news = News::where('lang', '=', $lang)->get();
