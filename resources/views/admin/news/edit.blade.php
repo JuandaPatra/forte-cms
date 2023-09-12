@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('title')
-Category Add
+News Edit
 @endsection
 @section('breadcrumbs')
  {{ Breadcrumbs::render('edit-news', $news ) }}

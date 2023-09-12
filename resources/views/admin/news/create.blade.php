@@ -86,7 +86,7 @@ News Add
                                     </div>
                                     <input type="hidden" name="lang[]" value="en">
                                     <div class="mb-3">
-                                        <label for="input_post_content" class="form-label">Description bahasa</label>
+                                        <label for="input_post_content" class="form-label">Description English</label>
                                         <textarea id="input_post_content" name="description0" class="form-control @error('description0') is-invalid @enderror" rows="20">
 
                                         </textarea>
