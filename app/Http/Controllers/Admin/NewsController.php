@@ -169,6 +169,7 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $validator = Validator::make(
             $request->all(),
             [
@@ -236,7 +237,9 @@ class NewsController extends Controller
                         'description1'                  => $news[$i][0],
                         'description2'                  => $news[$i][3],
                         'date'                          => Carbon::today(),
-                        'status'                        => 'publish'
+                        'status'                        => 'publish',
+                        'images1'                       => $request->thumbnail,
+                        'images2'                       => $request->images2
                     ]);
                 } catch (\throwable $th) {
                     DB::rollBack();
