@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\API\contactApiController;
 use App\Http\Controllers\API\newsApiController;
 use App\Http\Controllers\API\productApiController;
+use App\Http\Controllers\API\searchApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,10 +19,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('product', [productApiController::class, 'category'])->name('category');
-Route::get('product/{lang}', [productApiController::class, 'index'])->name('product');
+// Route::get('product/{lang}', [productApiController::class, 'index'])->name('product');
 
 // Route::get('news/detail/{slug}',[newsApiController::class, 'detail'])->class('news.detail');
 Route::get('news', [newsApiController::class, 'index'])->name('news');
+
+Route::get('search', [searchApiController::class, 'search']);
+Route::post('contact', [contactApiController::class, 'store'])->name('store-contact');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
