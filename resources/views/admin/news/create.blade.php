@@ -189,9 +189,10 @@ News Add
 
 
 
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success px-4"><i class="menu-icon bx bx-save"></i>Save</button>
+                    </div>
 
-                    <a class="btn btn-danger px-4" href=""><i class='bx bx-left-arrow-alt'></i>Back</a>
-                    <button type="submit" class="btn btn-success px-4"><i class="menu-icon bx bx-save"></i>Save</button>
                 </div>
             </div>
 

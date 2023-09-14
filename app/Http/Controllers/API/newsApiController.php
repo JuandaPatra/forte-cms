@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Helpers\ApiFormatter;
+use App\helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\Categories;
 use App\Models\News;
@@ -34,7 +34,7 @@ class newsApiController extends Controller
         if($slug and $lang){
             $news = News::where('slug','=', $slug)->where('lang', '=', $lang)->first();
         }else{
-            $news = News::where('lang', '=', $lang)->get();
+            $news = News::where('lang', '=', $lang)->orderBy('created_at', 'DESC')->get();
         }
 		
 		
