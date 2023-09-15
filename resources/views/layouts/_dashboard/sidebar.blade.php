@@ -86,6 +86,21 @@
       </ul>
     </li>
 
+    <li class="menu-item {{ set_active(['about.index','news.create', 'news.edit']) }} ">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon bx bxs-compass"></i>
+        <div data-i18n="Layouts">About Us</div>
+      </a>
+      <ul class="menu-sub ">
+        <li class="menu-item {{ set_active('about.index') }} ">
+          <a href="{{route('about.index')}}" class="menu-link">
+            <div data-i18n="Without menu">List</div>
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+
     <li class="menu-item  {{ set_active('contact.index') }}">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon bx bx-diamond"></i>
