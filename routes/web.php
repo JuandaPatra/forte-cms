@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ProductController;
@@ -34,4 +35,6 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::resource('product', [ProductController::class]);
     Route::resource('news', NewsController::class);
     Route::resource('contact', ContactController::class);
+
+    Route::resource('about', AboutController::class);
 });
