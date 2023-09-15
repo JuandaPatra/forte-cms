@@ -52,3 +52,8 @@ Breadcrumbs::for('product-create', function (BreadcrumbTrail $trail) {
 Breadcrumbs::for('contact', function (BreadcrumbTrail $trail) {
     $trail->push('Contact', route('contact.index'));
 });
+
+// News
+Breadcrumbs::for('about', function (BreadcrumbTrail $trail) {
+    $trail->push('About Us', route('about.index'));
+});
