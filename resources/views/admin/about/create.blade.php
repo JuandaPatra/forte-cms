@@ -3,7 +3,7 @@
 About Add
 @endsection
 @section('breadcrumbs')
-{{ Breadcrumbs::render('news-create') }}
+{{ Breadcrumbs::render('about') }}
 @endsection
 @section('content')
 <div class="row">
@@ -31,7 +31,7 @@ About Add
                                             </textarea>
                                             @error('description0')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -43,7 +43,7 @@ About Add
                                             </textarea>
                                             @error('description1')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -61,7 +61,7 @@ About Add
                                             </textarea>
                                             @error('description2')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -73,7 +73,7 @@ About Add
                                             </textarea>
                                             @error('description3')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -107,7 +107,7 @@ About Add
                                             </textarea>
                                             @error('description4')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -119,7 +119,7 @@ About Add
                                             </textarea>
                                             @error('description5')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -137,7 +137,7 @@ About Add
                                             </textarea>
                                             @error('description6')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -149,7 +149,7 @@ About Add
                                             </textarea>
                                             @error('description7')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -184,7 +184,7 @@ About Add
                                             </textarea>
                                             @error('description8')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -196,7 +196,7 @@ About Add
                                             </textarea>
                                             @error('description9')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -214,7 +214,7 @@ About Add
                                             </textarea>
                                             @error('description10')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
@@ -226,7 +226,7 @@ About Add
                                             </textarea>
                                             @error('description11')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <strong>Wajib di isi</strong>
                                             </span>
                                             @enderror
                                         </div>
