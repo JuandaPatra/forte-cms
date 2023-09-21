@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\aboutApiController;
+use App\Http\Controllers\API\checkIpApiController;
 use App\Http\Controllers\API\contactApiController;
 use App\Http\Controllers\API\newsApiController;
 use App\Http\Controllers\API\productApiController;
@@ -29,6 +30,8 @@ Route::get('search', [searchApiController::class, 'search']);
 Route::post('contact', [contactApiController::class, 'store'])->name('store-contact');
 
 Route::get('about', [aboutApiController::class, 'index']);
+
+Route::get('checkIp', [checkIpApiController::class,'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
