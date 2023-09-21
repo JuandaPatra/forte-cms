@@ -23,7 +23,11 @@ class checkIpApiController extends Controller
 			$lang = 'en';
 		}
 
-        return ApiFormatter::createApi(200, 'success', $lang);
+        $data = [
+            $position,$lang
+        ];
+
+        return ApiFormatter::createApi(200, 'success', $data);
 
     }
 }
