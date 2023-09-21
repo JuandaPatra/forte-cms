@@ -13,7 +13,6 @@ class checkIpApiController extends Controller
     {
         $ip =$request->ip();
 
-        return $request->ip();
         $position = \Location::get($ip);
 		
 		if($position->countryCode == "RU"){
