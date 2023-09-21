@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers\API;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
+use App\helpers\ApiFormatter;
+
+class checkIpApiController extends Controller
+{
+    public function index (Request $request)
+    {
+        $ip =$request->ip();
+
+        return $request->ip();
+        $position = \Location::get($ip);
+		
+		if($position->countryCode == "RU"){
+			$lang = 'ru';
+		}elseif($position->countryCode == "JP"){
+			$lang = 'ja';	
+		}else{
+			$lang = 'en';
+		}
+
+        return ApiFormatter::createApi(200, 'success', $lang);
+
+    }
+}
