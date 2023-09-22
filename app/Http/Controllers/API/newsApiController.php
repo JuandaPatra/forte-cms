@@ -18,16 +18,7 @@ class newsApiController extends Controller
 		// $lang = '';
 
 		
-        // $ip =$request->ip();
-        // $position = \Location::get($ip);
-		
-		// if($position->countryCode == "RU"){
-		// 	$lang = 'ru';
-		// }elseif($position->countryCode == "JP"){
-		// 	$lang = 'ja';	
-		// }else{
-		// 	$lang = 'en';
-		// }
+        
 		
 		
 		

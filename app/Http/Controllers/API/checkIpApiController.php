@@ -9,25 +9,25 @@ use App\helpers\ApiFormatter;
 
 class checkIpApiController extends Controller
 {
-    public function index (Request $request)
+    public function index(Request $request)
     {
-        $ip =$request->ip();
+        $ip = $request->ip();
 
         $position = \Location::get($ip);
-		
-		if($position->countryCode == "RU"){
-			$lang = 'ru';
-		}elseif($position->countryCode == "JP"){
-			$lang = 'ja';	
-		}else{
-			$lang = 'en';
-		}
+
+        if ($position->countryCode == "RU") {
+            $lang = 'ru';
+        } elseif ($position->countryCode == "JP") {
+            $lang = 'ja';
+        } else {
+            $lang = 'en';
+        }
 
         $data = [
-            $position,$lang
+            'detail'   => $position,
+            'language' => $lang
         ];
 
         return ApiFormatter::createApi(200, 'success', $data);
-
     }
 }
