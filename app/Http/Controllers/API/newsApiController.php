@@ -16,9 +16,6 @@ class newsApiController extends Controller
         $slug = $request->get('news');
         $lang = $request->get('lang');
 		// $lang = '';
-
-		
-        
 		
 		
 		
@@ -28,9 +25,7 @@ class newsApiController extends Controller
             $news = News::where('lang', '=', $lang)->orderBy('created_at', 'DESC')->get();
         }
 		
-		
-		
-
+	
         return ApiFormatter::createApi(200, 'success', $news);
     }
 }
