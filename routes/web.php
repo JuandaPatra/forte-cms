@@ -38,3 +38,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('about', AboutController::class);
 });
+
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

@@ -16,18 +16,6 @@ class newsApiController extends Controller
         $slug = $request->get('news');
         $lang = $request->get('lang');
 		// $lang = '';
-
-		
-        // $ip =$request->ip();
-        // $position = \Location::get($ip);
-		
-		// if($position->countryCode == "RU"){
-		// 	$lang = 'ru';
-		// }elseif($position->countryCode == "JP"){
-		// 	$lang = 'ja';	
-		// }else{
-		// 	$lang = 'en';
-		// }
 		
 		
 		
@@ -37,9 +25,7 @@ class newsApiController extends Controller
             $news = News::where('lang', '=', $lang)->orderBy('created_at', 'DESC')->get();
         }
 		
-		
-		
-
+	
         return ApiFormatter::createApi(200, 'success', $news);
     }
 }
