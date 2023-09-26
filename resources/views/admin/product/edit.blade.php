@@ -318,6 +318,7 @@ Product Edit
 
                     let cmsURL = "{{ route('unisharp.lfm.show') }}" + '?editor=' + meta.fieldname;
                     if (meta.filetype == 'image') {
+                        
                         cmsURL = cmsURL + "&type=Images";
                     } else {
                         cmsURL = cmsURL + "&type=Files";
@@ -329,8 +330,10 @@ Product Edit
                         height: y * 0.8,
                         resizable: "yes",
                         close_previous: "no",
+                        document_base_url : 'https://fortecms.owlandfoxes.co.id/',
                         onMessage: (api, message) => {
                             callback(message.content);
+                           
                         }
                     });
                 }

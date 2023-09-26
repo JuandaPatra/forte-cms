@@ -228,6 +228,7 @@ News Edit
 
             $("#input_post_content").tinymce({
                 relative_urls: false,
+                document_base_url : "https://fortecms.owlandfoxes.co.id/",
                 language: "en",
                 plugins: [
                     "advlist autolink lists link image charmap print preview hr anchor pagebreak",
@@ -247,6 +248,7 @@ News Edit
                     let cmsURL = "{{ route('unisharp.lfm.show') }}" + '?editor=' + meta.fieldname;
                     if (meta.filetype == 'image') {
                         cmsURL = cmsURL + "&type=Images";
+                        console.log(cmsURL)
                     } else {
                         cmsURL = cmsURL + "&type=Files";
                     }
