@@ -8,6 +8,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use DataTables;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Str;
 
 class ContactController extends Controller
 {
@@ -19,6 +20,9 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::orderBy('created_at', 'DESC')->get();
+       
+
+
         // return $contacts;
         return view('admin.contact.index', compact('contacts'));
     }
