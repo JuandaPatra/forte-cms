@@ -26,6 +26,10 @@
     .sorting_1{
       text-align: center;
     }
+
+    .table-contact td{
+        vertical-align: top;
+      }
   </style>
 
   {{-- css:external --}}

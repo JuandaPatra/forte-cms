@@ -20,6 +20,8 @@ class productApiController extends Controller
     {
         $product = Products::where('lang', '=', $lang)->get();
 
+        // $product = Products::select('products.*')
+
 
         return ApiFormatter::createApi(200, 'success', $product);
     }
@@ -31,19 +33,31 @@ class productApiController extends Controller
         $lang = $request->get('lang');
 
         $category = Categories::where('slug', '=', $status)->first();
-        
 
-        $product = Products::where('category', '=', $category->id)->where('lang', '=', $lang)->get();
-        
+
+        $product = Products::where('category', '=', $category->id)
+                    ->leftJoin('product_mains','product_mains.id', '=', 'product_mains.id')
+                    ->where('lang', '=', $lang)
+                    ->addSelect('product_mains.*','products.name as name', 'products.*', )
+                    ->get();
+
         return ApiFormatter::createApi(200, 'success', $product);
     }
 
 
-    public function product($slug, $lang)
+    public function product(Request $request, $slug)
     {
-        return $slug;
+        $lang = $request->get('lang');
 
-        
+        $productDetail = ProductMain::select('product_mains.*')
+            ->leftJoin('products', 'products.product_id', '=', 'product_mains.id')
+            ->where('slug', '=', $slug)
+            ->where('lang', '=', $lang)
+            ->addSelect('products.name as name', 'products.*')
+            ->first();
+
+
+        return ApiFormatter::createApi(200, 'success', $productDetail); 
     }
 
     /**

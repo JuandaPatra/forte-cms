@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use DataTables;
 
 class ContactController extends Controller
 {
@@ -15,8 +16,30 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all();
-        return view('admin.contact.index',compact('contacts'));
+        $contacts = Contact::orderBy('created_at', 'DESC')->get();
+        // return $contacts;
+        return view('admin.contact.index', compact('contacts'));
+    }
+
+    public function messages(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = Contact::orderBy('created_at', 'DESC')->get();
+            
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('date', function ($row) {
+                    $date = date("d/m/Y", strtotime($row->created_at));
+                    return $date;
+                })
+                ->addColumn('mes', function ($row) {
+                    $date = $row->message;
+                    return $date;
+                })
+                
+                ->make(true);
+
+        }
     }
 
     /**
@@ -48,7 +71,12 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        // return $id;
+
+        $contact = Contact::where('id', '=', $id)->first();
+
+
+        return view('admin.contact.detail', compact('contact'));
     }
 
     /**
