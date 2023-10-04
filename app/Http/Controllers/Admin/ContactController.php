@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\ContactsExport;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use DataTables;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ContactController extends Controller
 {
@@ -111,5 +113,11 @@ class ContactController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function export()
+    {
+
+        	return Excel::download(new ContactsExport, 'contact.xlsx');
     }
 }

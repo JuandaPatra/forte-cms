@@ -12,7 +12,12 @@ Contact-List
     <h5 class="card-header">Message List</h5>
     <div class="" style="height:auto">
 
-    {{-- 
+        <div class="d-flex justify-content-end">
+            <a href="{{route('export')}}" class="btn btn-success my-3" target="_blank">EXPORT EXCEL</a>
+
+        </div>
+
+        {{--
         <table class="table table-responsive text-nowrap">
             <thead>
                 <tr>
@@ -30,52 +35,55 @@ Contact-List
                 <tr>
                     <td>
                         {{$loop->iteration}}
-                    </td>
-                    <td><strong>{{ $row->name }}</strong></td>
-                    <td><strong> {{ date('d/m/Y', strtotime($row->created_at)) }}</strong></td>
-                    <td style="word-break:break-all;"><strong> <p>{{ $row->message }}</p> </strong></td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
+        </td>
+        <td><strong>{{ $row->name }}</strong></td>
+        <td><strong> {{ date('d/m/Y', strtotime($row->created_at)) }}</strong></td>
+        <td style="word-break:break-all;"><strong>
+                <p>{{ $row->message }}</p>
+            </strong></td>
+        <td>
+            <div class="dropdown">
+                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                    <i class="bx bx-dots-vertical-rounded"></i>
+                </button>
 
-                            <div class="dropdown-menu">
+                <div class="dropdown-menu">
 
-                                <a class="dropdown-item" href="{{ route('contact.show',$row) }}"><i class="bx bx-edit-alt me-1"></i> Detail</a>
+                    <a class="dropdown-item" href="{{ route('contact.show',$row) }}"><i class="bx bx-edit-alt me-1"></i> Detail</a>
 
 
-                            </div>
+                </div>
 
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
+            </div>
+        </td>
+        </tr>
+        @endforeach
 
-            </tbody>
+        </tbody>
         </table>
         --}}
 
 
-         
-            
-            <div class="" style="overflow:auto;">
-    
-                <table class="table table-bordered data-table mx-3 display responsive table-contact" >
-                     <thead>
-                         <tr>
-                             <th>No.</th>
-                             <th>Sender</th>
-                             <th>Email</th>
-                             <th>Date</th>
-                             <th>Messages</th>
-                         </tr>
-                     </thead>
-                     <tbody>
-                     </tbody>
-                 </table>
-            </div>
-            
+
+
+        <div class="" style="overflow:auto;">
+
+            <table class="table table-bordered data-table mx-3 display responsive table-contact">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Sender</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Country</th>
+                        <th>Messages</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 </div>
 <!--/ Basic Bootstrap Table -->
@@ -100,8 +108,8 @@ Contact-List
                 //  { "width": "20%" },
                 //  { "width": "20%" },
                 // //  { "width": "20%" },
-                
-                
+
+
                 {
                     data: 'DT_RowIndex',
                     name: 'DT_RowIndex',
@@ -119,6 +127,10 @@ Contact-List
                 {
                     data: 'date',
                     name: 'date'
+                },
+                {
+                    data: 'country',
+                    name: 'country'
                 },
                 {
                     data: 'mes',

@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Route::resource('product', [ProductController::class]);
     Route::resource('news', NewsController::class);
+    Route::get('/export', [ContactController::class, 'export'])->name('export');
     Route::get('/messages', [ContactController::class, 'messages'])->name('messages');
     Route::resource('contact', ContactController::class);
 
