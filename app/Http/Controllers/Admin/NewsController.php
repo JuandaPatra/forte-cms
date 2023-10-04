@@ -21,6 +21,7 @@ class NewsController extends Controller
     public function index()
     {
         $news = NewsMain::all();
+
         return view('admin.news.index', compact('news'));
     }
 

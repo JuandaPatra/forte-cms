@@ -3,12 +3,12 @@
 News Edit
 @endsection
 @section('breadcrumbs')
- {{ Breadcrumbs::render('edit-news', $news ) }}
+ {{ Breadcrumbs::render('edit-news', $contact ) }}
 @endsection
 @section('content')
 <div class="row">
     <div class="col-12 col-md-12">
-        <form action="{{route('news.update',['news'=>$news->id])}}" method="POST">
+        <form action="" method="POST">
             @csrf
             @method('PUT')
             <div class="card mb-4">
@@ -22,7 +22,7 @@ News Edit
                                 <div class="tab-pane fade active show" id="navs-top-home" role="tabpanel">
                                     <div class="mb-3">
                                         <label for="input_post_title" class="form-label">Name</label>
-                                        <input id="input_post_title" name="title" type="text" placeholder="" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $news->title) }}" />
+                                        <input id="input_post_title" name="title" type="text" placeholder="" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $contact->title) }}" />
                                         @error('title')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -32,100 +32,21 @@ News Edit
                                     <!-- slug -->
                                     <div class="mb-3">
                                         <label for="input_post_slug" class="form-label">Slug</label>
-                                        <input id="input_post_slug" name="slug" type="text" class="form-control @error('slug') is-invalid @enderror" readonly value="{{ old('slug', $news->slug) }}" />
+                                        <input id="input_post_slug" name="slug" type="text" class="form-control @error('slug') is-invalid @enderror" readonly value="{{ old('slug', $contact->slug) }}" />
                                         @error('slug')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                         @enderror
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="input_post_image" class="form-label">Image</label>
-                                        <div class="input-group">
-                                            <button id="button_post_image" data-input="input_post_image" class="btn btn-outline-primary" type="button">
-                                                Browse
-                                            </button>
-                                            <input id="input_post_image" name="thumbnail" value="{{ old('thumbnail', $newsDetail[0]['images1']) }}" type="text" class="form-control" placeholder="" readonly />
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="input_post_image" class="form-label">Image 2</label>
-                                        <div class="input-group">
-                                            <button id="button_post_image2" data-input="input_post_image2" class="btn btn-outline-primary" type="button">
-                                                Browse
-                                            </button>
-                                            <input id="input_post_image2" name="images2" value="{{ old('images2', $newsDetail[0]['images2']) }}" type="text" class="form-control" placeholder="" readonly />
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">title English</label>
-                                        <input id="input_post_title" name="name0" type="text" placeholder="" class="form-control @error('name0') is-invalid @enderror" name="name0" value="{{ old('name0', $newsDetail[0]['title']) }}" />
-                                        @error('name0')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">short desc English</label>
-                                        <input id="input_post_title" name="shortdesc0" type="text" placeholder="" class="form-control @error('name0') is-invalid @enderror" name="name0" value="{{ old('name0', $newsDetail[0]['description1']) }}" />
-                                        @error('shortdesc0')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                    <input type="hidden" name="lang[]" value="en">
-                                    <div class="mb-3">
-                                        <label for="input_post_content" class="form-label">Description English</label>
-                                        <textarea id="input_post_content" name="description0" class="form-control @error('description0') is-invalid @enderror" rows="20">
-                                        {{$newsDetail[0]['description2']}}
-                                        </textarea>
-                                        @error('description1')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">news title Japan</label>
-                                        <input id="input_post_title" name="name1" type="text" placeholder="" class="form-control @error('name1') is-invalid @enderror" name="name1" value="{{ old('name1',$newsDetail[1]['title']) }}" />
-                                        @error('name1')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">short desc Japan</label>
-                                        <input id="input_post_title" name="shortdesc1" type="text" placeholder="" class="form-control @error('shortdesc1') is-invalid @enderror" name="shortdesc1" value="{{ old('shortdesc1',$newsDetail[1]['description1']) }}" />
-                                        @error('shortdesc1')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                    <input type="hidden" name="lang[]" value="ja">
-                                    <div class="mb-3">
-                                        <label for="input_post_content1" class="form-label">News Description Japan</label>
-                                        <textarea id="input_post_content1" name="description1" class="form-control @error('description1') is-invalid @enderror" rows="20">
-                                        {{$newsDetail[1]['description2']}}
-                                        </textarea>
-                                        @error('description1')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="input_post_title" class="form-label">news title Russia</label>
-                                        <input id="input_post_title" name="name2" type="text" placeholder="" class="form-control @error('name2') is-invalid @enderror" name="name2" value="{{ old('name2', $newsDetail[2]['title']) }}" />
-                                        @error('name2')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
+                                   
+                                   
+                                   
+                                    
+                                    
+                                    
+                                    
+                                    
                                     <div class="mb-3">
                                         <label for="input_post_title" class="form-label">short desc Russia</label>
                                         <input id="input_post_title" name="shortdesc2" type="text" placeholder="" class="form-control @error('shortdesc2') is-invalid @enderror" name="shortdesc2" value="{{ old('shortdesc2', $newsDetail[2]['description1']) }}" />
