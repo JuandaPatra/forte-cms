@@ -9,11 +9,13 @@ Contact-List
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
-    <h5 class="card-header">Message List</h5>
+    <div class="d-flex justify-content-between pe-3">
+        <h5 class="card-header">Message List</h5>
+        <a href="{{route('export')}}" class="btn btn-success my-3 " target="_blank">EXPORT EXCEL</a>
+    </div>
     <div class="" style="height:auto">
 
         <div class="d-flex justify-content-end">
-            <a href="{{route('export')}}" class="btn btn-success my-3" target="_blank">EXPORT EXCEL</a>
 
         </div>
 

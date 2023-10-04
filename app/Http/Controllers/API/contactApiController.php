@@ -12,6 +12,7 @@ use Stevebauman\Location\Facades\Location;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use App\Rules\wordCount;
 
 class contactApiController extends Controller
 {
@@ -21,13 +22,20 @@ class contactApiController extends Controller
         $request['name'] = strip_tags($request->name);
         $request['email'] = strip_tags($request->email);
         $request['message'] = strip_tags($request->message);
+
+        // $tes = $request->message;
+
+
+        // if(count(explode(' ', $tes)) > 160)
+        // return 'more than 160 words';
         $validator = Validator::make(
             $request->all(),
             [
                 'name'      => 'required|string|max:100',
                 'email'      => 'required|string|email|max:100',
                 'country'    => 'required|string|max:100',
-                'message'      => 'required|string|max:1000',
+                'message'      => 'required|string|max:160',
+                // 'message'    => ['required', new wordCount(160)]
 
             ]
         );
