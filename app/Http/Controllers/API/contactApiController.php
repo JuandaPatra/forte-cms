@@ -13,15 +13,16 @@ use Stevebauman\Location\Facades\Location;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Rules\wordCount;
+use Illuminate\Support\Facades\Mail;
 
 class contactApiController extends Controller
 {
     public function store(Request $request)
     {
 
-        $request['name'] = strip_tags($request->name);
-        $request['email'] = strip_tags($request->email);
-        $request['message'] = strip_tags($request->message);
+        // $request['name'] = strip_tags($request->name);
+        // $request['email'] = strip_tags($request->email);
+        // $request['message'] = strip_tags($request->message);
 
         // $tes = $request->message;
 
@@ -68,6 +69,22 @@ class contactApiController extends Controller
         } finally {
             DB::commit();
         }
+
+       $email = [
+        'emailReceiver' => 'patrajuanda10@gmail.com',
+        'emailSender'   => '*@fortecig.id',
+        'name'      => $request->name,
+        'email'      => $request->email,
+        'country'    => $request->country,
+        'message'      => $request->message,
+
+       ];
+
+        Mail::send('admin.emails.contact', $email, function ($message) use ($email,) {
+            $message->from($email['emailSender']);
+            $message->to($email['emailReceiver']);
+            $message->subject('New Contact Detail' . $email['name']);
+        });
 
 
        

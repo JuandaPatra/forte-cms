@@ -36,7 +36,7 @@ class productApiController extends Controller
 
 
         $product = Products::where('category', '=', $category->id)
-                    ->leftJoin('product_mains','product_mains.id', '=', 'product_mains.id')
+                    ->leftJoin('product_mains','product_mains.id', '=', 'products.product_id')
                     ->where('lang', '=', $lang)
                     ->addSelect('product_mains.*','products.name as name', 'products.*', )
                     ->get();
