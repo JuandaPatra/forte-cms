@@ -70,21 +70,21 @@ class contactApiController extends Controller
             DB::commit();
         }
 
-       $email = [
-        'emailReceiver' => 'patrajuanda10@gmail.com',
-        'emailSender'   => '*@fortecig.id',
-        'name'      => $request->name,
-        'email'      => $request->email,
-        'country'    => $request->country,
-        'message'      => $request->message,
+    //    $email = [
+    //     'emailReceiver' => 'patrajuanda10@gmail.com',
+    //     'emailSender'   => '*@fortecig.id',
+    //     'name'      => $request->name,
+    //     'email'      => $request->email,
+    //     'country'    => $request->country,
+    //     'message'      => $request->message,
 
-       ];
+    //    ];
 
-        Mail::send('admin.emails.contact', $email, function ($message) use ($email,) {
-            $message->from($email['emailSender']);
-            $message->to($email['emailReceiver']);
-            $message->subject('New Contact Detail' . $email['name']);
-        });
+        // Mail::send('admin.emails.contact', $email, function ($message) use ($email,) {
+        //     $message->from($email['emailSender']);
+        //     $message->to($email['emailReceiver']);
+        //     $message->subject('New Contact Detail' . $email['name']);
+        // });
 
 
        
