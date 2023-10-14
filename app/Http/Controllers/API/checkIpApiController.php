@@ -11,7 +11,8 @@ class checkIpApiController extends Controller
 {
     public function index(Request $request)
     {
-        $ip = $request->ip();
+        // $ip = $request->ip();
+        $ip = $request->get('ip');
 
         $position = \Location::get($ip);
 
@@ -30,4 +31,6 @@ class checkIpApiController extends Controller
 
         return ApiFormatter::createApi(200, 'success', $data);
     }
+
+    
 }
