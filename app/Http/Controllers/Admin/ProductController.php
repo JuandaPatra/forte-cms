@@ -10,6 +10,7 @@ use Alert;
 use App\Models\Categories;
 use App\Models\ProductMain;
 use App\Models\Products;
+use Illuminate\Support\Facades\Crypt;
 
 class ProductController extends Controller
 {
@@ -153,7 +154,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = ProductMain::where('id', '=', $id)->first();
+        $id = Crypt::decrypt($id);
+
+
+        $product = ProductMain::where('id', '=', $id->id)->first();
+
         $productDetail = Products::where('product_id', '=', $product->id)->get();
 
 
