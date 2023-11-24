@@ -34,7 +34,7 @@ Product Lists
               </button>
 
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('product.edit',['product'=>$row]) }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                <a class="dropdown-item" href="{{ route('product.edit',['product'=>encrypt($row)]) }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
 
                 <form action="{{ route('product.destroy',['product'=>$row]) }}" method="post">
                   @csrf
